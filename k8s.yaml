@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: staticwebserver
-          image: git.systementor.se/christian.tallner/yagolangapitalle1
+          image: DOCKERHUB_USERNAME/DOCKERHUB_REPOSITORY:IMAGE_LABEL
           ports:
             - containerPort: 8080
           env:
