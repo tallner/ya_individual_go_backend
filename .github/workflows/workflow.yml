@@ -18,8 +18,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      
-          
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v3
@@ -28,7 +26,8 @@ jobs:
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
         run: | 
-          ls -R
+          sed -i "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" templates/home.html
+
         
  #     - name: Create Kubernetes secret
  #       run: |
