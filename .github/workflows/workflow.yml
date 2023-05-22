@@ -18,6 +18,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # get the sha created in github during comit and show on the template html site
+      # this makes it easier to see what comit is deployed when testing
+      - name: Modify HTML file
+        run: | 
+          sed -i "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" templates/home.html
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v3
@@ -52,3 +58,5 @@ jobs:
           export DOCKER_CONFIG=$(cat ~/.docker/config.json | base64 -w 0)
           sed -i'' -e 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' -e 's/DOCKERHUB_REPOSITORY/${{ secrets.DOCKERHUB_REPOSITORY }}/g' -e 's/IMAGE_LABEL/${{ github.sha }}/g' -e "s/DOCKER_CONFIG/$DOCKER_CONFIG/g" linodedeploy.yaml
           kubectl apply -f linodedeploy.yaml
+
+      
