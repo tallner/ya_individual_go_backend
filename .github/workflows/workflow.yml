@@ -18,16 +18,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # get the sha created in github during comit and show on the template html site
-      # this makes it easier to see what comit is deployed when testing
-      - name: Modify HTML file
-        run: | 
-          ls -R
+      
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v3
 
+        # get the sha created in github during comit and show on the template html site
+      # this makes it easier to see what comit is deployed when testing
+      - name: Modify HTML file
+        run: | 
+          ls -R
         
  #     - name: Create Kubernetes secret
  #       run: |
