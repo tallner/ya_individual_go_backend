@@ -22,8 +22,7 @@ jobs:
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
         run: | 
-          pwd
-          sed -i "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" 
+          ls -R
           
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
