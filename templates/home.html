@@ -1,9 +1,14 @@
+
 <html>
     <head>
         <title>{{ .Title }}</title>
     </head>
     <body>
         <h1>{{ .Rubrik }}</h1>
-            <p>GitHub commit SHA: {{ GITHUB_SHA }}</p>
+        {{ if .IsGitHubActions }}
+            <p>GitHub commit SHA: {{ .GitHubSHA }}</p>
+        {{ else }}
+            <p>Local testing commit SHA: <em>placeholder value</em></p>
+        {{ end }}
     </body>
 </html>

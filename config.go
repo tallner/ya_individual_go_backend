@@ -33,6 +33,7 @@ type Config struct {
 func readConfig(cfg *Config) {
 	readFile(cfg)
 	readEnv(cfg)
+	setLocalGitHubEnv()
 	fmt.Printf("%+v", cfg)
 }
 
@@ -51,4 +52,9 @@ func readFile(cfg *Config) {
 
 func readEnv(cfg *Config) {
 	envconfig.Process("", cfg)
+}
+
+func setLocalGitHubEnv() {
+	os.Setenv("GITHUB_SHA", "abcdef123456789") // Replace with your desired value
+	os.Setenv("GITHUB_ACTIONS", "true")        // Replace with your desired value
 }
