@@ -26,11 +26,14 @@ jobs:
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
         run: | 
-          sed -i "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" templates/home.html
+          sed -i'' \
+          -e "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" \
+          -e "s/{{ GITHUB_ACTION }}/${{ github.action }}/g" \
+          templates/home.html
 
         
  #     - name: Create Kubernetes secret
- 
+
  #       run: |
   #        kubectl create secret docker-registry regcred2 \
    #         --docker-server=docker.io \
@@ -57,7 +60,14 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}
           
           export DOCKER_CONFIG=$(cat ~/.docker/config.json | base64 -w 0)
-          sed -i'' -e 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' -e 's/DOCKERHUB_REPOSITORY/${{ secrets.DOCKERHUB_REPOSITORY }}/g' -e 's/IMAGE_LABEL/${{ github.sha }}/g' -e "s/DOCKER_CONFIG/$DOCKER_CONFIG/g" linodedeploy.yaml
+
+          sed -i'' \
+           -e 's/DOCKERHUB_USERNAME/${{ secrets.DOCKERHUB_USERNAME }}/g' \
+           -e 's/DOCKERHUB_REPOSITORY/${{ secrets.DOCKERHUB_REPOSITORY }}/g' \
+           -e 's/IMAGE_LABEL/${{ github.sha }}/g' \
+           -e "s/DOCKER_CONFIG/$DOCKER_CONFIG/g" \
+           linodedeploy.yaml
+          
           kubectl apply -f linodedeploy.yaml
 
       
