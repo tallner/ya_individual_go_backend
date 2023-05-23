@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"os"
 
 	"math/rand"
 	"time"
@@ -13,9 +12,9 @@ import (
 )
 
 type PageView struct {
-	Title     string
-	Rubrik    string
-	GitHubSHA string
+	Title                  string
+	Rubrik                 string
+	GITHUB_SHA_PLACEHOLDER string
 }
 
 var theRandom *rand.Rand
@@ -25,9 +24,9 @@ func start(c *gin.Context) {
 		http.StatusOK,
 		"home.html",
 		&PageView{
-			Title:     "test",
-			Rubrik:    "Hello Golang",
-			GitHubSHA: os.Getenv("GITHUB_SHA")})
+			Title:                  "test",
+			Rubrik:                 "Hello Golang",
+			GITHUB_SHA_PLACEHOLDER: ""})
 }
 
 // HTML

@@ -1,11 +1,11 @@
-
 <html>
-    <head>
-        <title>{{ .Title }}</title>
-    </head>
-    <body>
-        <h1>{{ .Rubrik }}</h1>
-            <p>GitHub commit SHA: {{ .GitHubSHA }}</p>        
-        
-    </body>
+<head>
+    <title>{{ .Title }}</title>
+</head>
+<body>
+    <h1>{{ .Rubrik }}</h1>
+    {{ if eq .GITHUB_SHA_PLACEHOLDER "" }}
+        <p>GitHub commit SHA: {{ .GITHUB_SHA_PLACEHOLDER }}</p>
+    {{ end }}
+</body>
 </html>
