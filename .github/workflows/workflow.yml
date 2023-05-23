@@ -22,9 +22,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
+      - name: Example Workflow Step
+        run: |
+          echo "GITHUB_ACTIONS environment variable: ${{ env.GITHUB_ACTIONS }}"
+
+
         # get the sha created in github during comit and show on the template html site
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
+        
         run: | 
           sed -i'' \
           -e "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" \
