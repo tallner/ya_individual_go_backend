@@ -5,7 +5,8 @@
 <body>
     <h1>{{ .Rubrik }}</h1>
     {{ if eq .GITHUB_SHA_PLACEHOLDER "" }}
-        <p>GitHub commit SHA: {{ .GITHUB_SHA_PLACEHOLDER }}</p>
+        <p>GitHub commit SHA: {{ GITHUB_SHA_PLACEHOLDER }}</p>
     {{ end }}
+    <p>GitHub commit SHA: {{ GITHUB_SHA_PLACEHOLDER }}</p>
 </body>
 </html>
