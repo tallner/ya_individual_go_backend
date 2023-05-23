@@ -5,8 +5,9 @@
     </head>
     <body>
         <h1>{{ .Rubrik }}</h1>
+            <p>Local testing commit SHA: <em>.GitHubSHA</em></p>
         {{ if eq .GitHubSHA "local" }}
-            <p>Local testing commit SHA: <em>placeholder value</em></p>        
+            <p>Local testing commit SHA: <em>.GitHubSHA</em></p>        
         {{ else }}
             <p>GitHub commit SHA: {{ .GitHubSHA }}</p>        
         {{ end }}
