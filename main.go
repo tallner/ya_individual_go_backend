@@ -16,7 +16,6 @@ type PageView struct {
 	Title           string
 	Rubrik          string
 	GitHubSHA       string
-	IsGitHubActions bool
 }
 
 var theRandom *rand.Rand
@@ -28,8 +27,7 @@ func start(c *gin.Context) {
 		&PageView{
 			Title:           "test",
 			Rubrik:          "Hello Golang",
-			GitHubSHA:       os.Getenv("GITHUB_SHA"),
-			IsGitHubActions: os.Getenv("GITHUB_ACTIONS") == "false"})
+			GitHubSHA:       os.Getenv("GITHUB_SHA")
 }
 
 // HTML

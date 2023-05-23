@@ -55,6 +55,5 @@ func readEnv(cfg *Config) {
 }
 
 func setLocalGitHubEnv() {
-	os.Setenv("GITHUB_SHA", "abcdef123456789") // Replace with your desired value
-	os.Setenv("GITHUB_ACTIONS", "true")        // Replace with your desired value
+	os.Setenv("GITHUB_SHA", "local") // Replace with your desired value
 }

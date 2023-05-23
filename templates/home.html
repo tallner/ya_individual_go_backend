@@ -5,10 +5,10 @@
     </head>
     <body>
         <h1>{{ .Rubrik }}</h1>
-        {{ if .IsGitHubActions }}
-            <p>GitHub commit SHA: {{ .GitHubSHA }}</p>
+        {{ if eq .GitHubSHA "local" }}
+            <p>Local testing commit SHA: <em>placeholder value</em></p>        
         {{ else }}
-            <p>Local testing commit SHA: <em>placeholder value</em></p>
+            <p>GitHub commit SHA: {{ .GitHubSHA }}</p>        
         {{ end }}
     </body>
 </html>
