@@ -41,7 +41,7 @@ jobs:
         run: | 
           sed -i'' \
             -e "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" \
-            -e "s/{{ GITHUB_ACTIONS }}/$GITHUB_ACTIONS/g" \
+            -e "s/{{ GITHUB_ACTIONS }}/{$GITHUB_ACTIONS}/g" \
             templates/home.html
 
         
