@@ -39,7 +39,7 @@ jobs:
         # get the sha created in github during comit and show on the template html site
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
-        if: true
+        if: github.action_status
         run: | 
           sed -i'' \
             -e "s/{{ GITHUB_SHA }}/{{ $GITHUB_ACTIONS }}/g" \
