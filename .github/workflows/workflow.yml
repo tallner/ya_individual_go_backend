@@ -40,10 +40,9 @@ jobs:
         
         run: | 
           sed -i'' \
-          -e "s/{{ GITHUB_SHA }}/{{ env.GITHUB_ACTIONS }}/g" \
-          -e "s/{{ GITHUB_SHA }}/${{ env.GITHUB_ACTIONS }}/g" \
-          -e "s/{{ GITHUB_ACTION }}/{{ env.GITHUB_ACTIONS }}/g" \
-          templates/home.html
+            -e "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" \
+            -e "s/{{ GITHUB_ACTION }}/$GITHUB_ACTIONS/g" \
+            templates/home.html
 
         
  #     - name: Create Kubernetes secret
