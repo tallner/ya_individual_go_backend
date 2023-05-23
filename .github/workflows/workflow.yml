@@ -40,9 +40,7 @@ jobs:
       # this makes it easier to see what comit is deployed when testing
       - name: Modify HTML file
         run: |
-          sed -i'' -e "s/{{ GITHUB_SHA_PLACEHOLDER }}/${{ github.sha }}/g" \
-                    -e "s/{{ GITHUB_SHA }}/GITHUB_SHA_PLACEHOLDER/g" \
-                    templates/home.html
+          sed -i'' -e "s/{{ GITHUB_SHA_PLACEHOLDER }}/${{ github.sha }}/g" templates/home.html
 
         
  #     - name: Create Kubernetes secret
