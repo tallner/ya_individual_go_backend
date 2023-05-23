@@ -24,7 +24,7 @@ jobs:
 
       - name: Example Workflow Step
         run: |
-          if [[ -n "$GITHUB_ACTIONS" ]]; then
+          if [[ -n "${GITHUB_ACTIONS}" ]]; then
             sed -i'' -e 's/{{ GITHUB_ACTIONS }}/true/g' templates/home.html
           else
             sed -i'' -e 's/{{ GITHUB_ACTIONS }}/false/g' templates/home.html
@@ -41,9 +41,8 @@ jobs:
         run: | 
           sed -i'' \
           -e "s/{{ GITHUB_SHA }}/${{ github.sha }}/g" \
+          -e "s/{{ GITHUB_ACTION }}/{$GITHUB_ACTIONS}/g" \
           templates/home.html
-      #    -e "s/{{ GITHUB_ACTION }}/$GITHUB_ACTIONS/g" \
-          
 
         
  #     - name: Create Kubernetes secret
