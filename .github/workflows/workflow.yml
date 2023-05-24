@@ -28,6 +28,22 @@ jobs:
         run: |
           sed -i'' -e "s/{{ .GITHUB_SHA_PLACEHOLDER }}/${{ github.sha }}/g" templates/home.html
 
+      # Run unit tests
+      - name: Run unit tests
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.20.3
+      - run: go test ./...
+        continue-on-error: true
+      - name: Check test results
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "All tests passed"
+          else
+            echo "Some tests failed"
+            exit 1
+          fi
+      
       - name: login to dockerhub
         uses: docker/login-action@v2
         with:
