@@ -1,4 +1,4 @@
-module systementor.se/yagolangapi
+module cte.se/yagolangapi
 
 go 1.19
 

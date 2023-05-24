@@ -6,9 +6,9 @@ import (
 	"math/rand"
 	"time"
 
+	"cte.se/yagolangapi/data"
 	"github.com/Pallinder/go-randomdata"
 	"github.com/gin-gonic/gin"
-	"systementor.se/yagolangapi/data"
 )
 
 type PageView struct {
