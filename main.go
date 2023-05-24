@@ -26,7 +26,7 @@ func start(c *gin.Context) {
 		&PageView{
 			Title:                  "test",
 			Rubrik:                 "Hello Golang",
-			GITHUB_SHA_PLACEHOLDER: ""})
+			GITHUB_SHA_PLACEHOLDER: "Local"})
 }
 
 // HTML
@@ -73,7 +73,7 @@ func main() {
 	router.GET("/api/employees", employeesJson)
 	router.GET("/api/addemployee", addEmployee)
 	router.GET("/api/addmanyemployees", addManyEmployees)
-	router.Run(":8080")
+	router.Run(":8081")
 
 	// e := data.Employee{
 	// 	Age:  1,
