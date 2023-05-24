@@ -8,7 +8,7 @@ import (
 
 func TestWhenAgeIs19AndLocationIsSystemetThenNotAllowed(t *testing.T) {
 	//arrange
-	age := 19
+	age := 15
 	location := "Systemet"
 	promille := float32(0)
 
