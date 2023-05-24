@@ -73,7 +73,7 @@ func main() {
 	router.GET("/api/employees", employeesJson)
 	router.GET("/api/addemployee", addEmployee)
 	router.GET("/api/addmanyemployees", addManyEmployees)
-	router.Run(":8081")
+	router.Run(":8080")
 
 	// e := data.Employee{
 	// 	Age:  1,
