@@ -17,7 +17,7 @@ func TestWhenAgeIs19AndLocationIsSystemetThenNotAllowed(t *testing.T) {
 
 	//assert
 	//assert.Equal(t, 123, i)
-	assert.True(t, result)
+	assert.False(t, result)
 
 }
 
