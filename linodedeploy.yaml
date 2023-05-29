@@ -13,22 +13,22 @@ type: kubernetes.io/dockerconfigjson
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: staticwebserver
+  name: mygobackend
   namespace: yat2
   labels:
-    app: staticwebserver
+    app: mygobackend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: staticwebserver
+      app: mygobackend
   template:
     metadata:
       labels:
-        app: staticwebserver
+        app: mygobackend
     spec:
       containers:
-        - name: staticwebserver
+        - name: mygobackend
           image: DOCKERHUB_USERNAME/DOCKERHUB_REPOSITORY:IMAGE_LABEL
           ports:
             - containerPort: 8080
@@ -42,9 +42,9 @@ apiVersion: v1
 kind: Service
 metadata:
   namespace: yat2
-  name: staticwebserver-service
+  name: mygobackend-service
   labels:
-    app: staticwebserver
+    app: mygobackend
 spec:
   type: ClusterIP
   ports:
@@ -53,5 +53,5 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: staticwebserver
+    app: mygobackend
   sessionAffinity: None

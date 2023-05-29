@@ -86,9 +86,9 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional (recommended) mail server username:
-          username: ctallner@hotmail.com
+          username:
           # Optional (recommended) mail server password:
-          password: nytt_Lösenord0
+          password:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
