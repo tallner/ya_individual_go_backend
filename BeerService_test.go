@@ -10,7 +10,7 @@ func TestWhenAgeIs19AndLocationIsSystemetThenNotAllowed(t *testing.T) {
 	//arrange
 	age := 25
 	location := "Systemet"
-	promille := float32(0)
+	promille := float32(0.01)
 
 	//act
 	result := CanIBuyBeer(age, location, promille)
