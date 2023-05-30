@@ -1,4 +1,4 @@
-module cte.se/yagolangapi
+module cte.se/ya_individual_go_backend
 
 go 1.19
 

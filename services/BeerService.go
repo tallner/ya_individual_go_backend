@@ -1,4 +1,4 @@
-package main
+package services
 
 func CanIBuyBeer(age int, location string, promille float32) bool {
 	if promille > 1.5 {
