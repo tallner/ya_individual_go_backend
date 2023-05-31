@@ -3,6 +3,7 @@ package main
 import (
 	"cte.se/ya_individual_go_backend/data"
 	"cte.se/ya_individual_go_backend/handlers"
+	"cte.se/ya_individual_go_backend/services"
 )
 
 // testar lite
@@ -19,6 +20,9 @@ func main() {
 		config.Database.Password,
 		config.Database.Port)
 
-	router := handlers.SetupRouter()
+	employeeService := services.NewEmployeeService()
+	employeeHandler := handlers.NewEmployeeHandler(employeeService)
+
+	router := handlers.SetupRouter(employeeHandler)
 	router.Run(":8080")
 }
