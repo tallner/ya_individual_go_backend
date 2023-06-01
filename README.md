@@ -11,7 +11,7 @@
 ### Inlämning
 - [x] Kod i privata git-repository
 - [x] bjud in stefan.holmberg@systementor.se som collaborator
-- [ ] Skriftlig dokumentation (ca 3 sidor) – beskriv kortfattat appliktionernas arkitektur
+- [x] Skriftlig dokumentation (ca 3 sidor) – beskriv kortfattat appliktionernas arkitektur
 
 ### Godkänt
 - [x] Källkod i valfri Cloud-leverantör (Github, Dockerhub, Linode)
