@@ -1,12 +1,12 @@
 # ya_individual_go_backend -> [Dokumentation av appen](https://github.com/tallner/ya_individual_go_backend/blob/main/Dokumentation.md)
 
 ### Webtjänster
-- Två stycken; ena är skriven i Go  eller Python
-- En webbsajt
-- Databasdrivna (förslag kör MySQL i ert kluster)
-	- Dessa ska köras i eget Kubernetes-kluster
-	- set up controller och DNS-subdomains
-	- manuell deploy med kubectl rollout restart deployment
+- [ ] Två stycken; ena är skriven i Go  eller Python
+- [ ] En webbsajt
+- [ ] Databasdrivna (förslag kör MySQL i ert kluster)
+	- [ ] Dessa ska köras i eget Kubernetes-kluster
+	- [ ] set up controller och DNS-subdomains
+	- [ ] manuell deploy med kubectl rollout restart deployment
 
 ### Inlämning
 - [x] Kod i privata git-repository
