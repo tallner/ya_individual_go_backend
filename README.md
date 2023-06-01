@@ -1,4 +1,4 @@
-# ya_individual_go_backend
+# ya_individual_go_backend -> [Dokumentation av appen](https://github.com/tallner/ya_individual_go_backend/blob/main/Dokumentation.md)
 
 ### Webtjänster
 - Två stycken; ena är skriven i Go  eller Python
