@@ -6,17 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestarBaraFörAttPipelinenSkaFåJobba_0(t *testing.T) {
+func TestBaraFörAttPipelinenSkaFåJobba_0(t *testing.T) {
 	assert.True(t, true)
 }
-func TestarBaraFörAttPipelinenSkaFåJobba_1(t *testing.T) {
+func TestBaraFörAttPipelinenSkaFåJobba_1(t *testing.T) {
 	assert.False(t, false)
 }
-func TestarBaraFörAttPipelinenSkaFåJobba_2(t *testing.T) {
-	isThisAnError := nil
-	assert.Error(t, isThisAnError)
+func TestBaraFörAttPipelinenSkaFåJobba_2(t *testing.T) {
+	assert.Error(t, nil)
 }
-func TestarBaraFörAttPipelinenSkaFåJobba_3(t *testing.T) {
+func TestBaraFörAttPipelinenSkaFåJobba_3(t *testing.T) {
 	ageInMonth := 50 * 12
 	result := ageInMonth > 500
 
