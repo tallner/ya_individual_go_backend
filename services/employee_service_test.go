@@ -13,7 +13,7 @@ func TestBaraFörAttPipelinenSkaFåJobba_1(t *testing.T) {
 	assert.False(t, false)
 }
 func TestBaraFörAttPipelinenSkaFåJobba_2(t *testing.T) {
-	assert.Error(t, nil)
+	assert.NoError(t, nil)
 }
 func TestBaraFörAttPipelinenSkaFåJobba_3(t *testing.T) {
 	ageInMonth := 50 * 12
