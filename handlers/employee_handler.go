@@ -5,6 +5,7 @@ import (
 
 	"cte.se/ya_individual_go_backend/data"
 	"cte.se/ya_individual_go_backend/services"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -89,6 +90,13 @@ func (h *EmployeeHandler) GetPageView(c *gin.Context) {
 
 func SetupRouter(employeeHandler *EmployeeHandler) *gin.Engine {
 	router := gin.Default()
+	// Enable CORS
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"http://localhost:1234"}, // frontend URL
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
+		AllowHeaders:     []string{"Origin", "Authorization", "Content-Type"},
+		AllowCredentials: true,
+	}))
 	router.LoadHTMLGlob("templates/**")
 
 	router.GET("/", employeeHandler.GetPageView)
