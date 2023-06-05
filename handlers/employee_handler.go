@@ -29,7 +29,14 @@ func (h *EmployeeHandler) GetEmployees(c *gin.Context) {
 }
 
 func (h *EmployeeHandler) AddEmployee(c *gin.Context) {
-	err := h.employeeService.AddEmployee()
+	var employee data.Employee
+
+	if err := c.ShouldBindJSON(&employee); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid employee data"})
+		return
+	}
+
+	err := h.employeeService.AddEmployee(&employee)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to add employee"})
 		return

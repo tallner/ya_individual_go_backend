@@ -34,13 +34,9 @@ func (s *EmployeeService) GetEmployees() ([]data.Employee, error) {
 	return employees, nil
 }
 
-func (s *EmployeeService) AddEmployee() error {
-	employee := data.Employee{
-		Age:  theRandom.Intn(50) + 18,
-		Namn: randomdata.FirstName(randomdata.RandomGender),
-		City: randomdata.City(),
-	}
-	err := data.DB.Create(&employee).Error
+func (s *EmployeeService) AddEmployee(employee *data.Employee) error {
+
+	err := data.DB.Create(employee).Error
 	if err != nil {
 		return err
 	}
