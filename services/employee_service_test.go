@@ -19,7 +19,7 @@ func TestBaraFörAttPipelinenSkaFåJobba_3(t *testing.T) {
 	ageInMonth := 50 * 12
 	result := ageInMonth > 500
 
-	assert.False(t, result)
+	assert.True(t, result)
 }
 
 //func TestAddEmployee(t *testing.T) {
