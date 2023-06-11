@@ -99,7 +99,12 @@ func SetupRouter(employeeHandler *EmployeeHandler) *gin.Engine {
 	router := gin.Default()
 	// Enable CORS
 	router.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:1234", "http://localhost:8080", "https://tallner.github.io/ya_frontend/", "https://tallner.crabdance.com"}, // frontend URL
+		AllowOrigins: []string{
+			"http://localhost:1234",
+			"http://localhost:8080",
+			"https://tallner.github.io/ya_frontend/",
+			"https://tallner.crabdance.com",
+			"https://xstall.chickenkiller.com"}, // frontend URL
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Authorization", "Content-Type"},
 		AllowCredentials: true,
