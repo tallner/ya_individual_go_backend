@@ -8,6 +8,7 @@ data:
   .dockerconfigjson: DOCKER_CONFIG
 type: kubernetes.io/dockerconfigjson
 
+
 ---
 
 apiVersion: apps/v1
