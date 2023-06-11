@@ -104,7 +104,8 @@ func SetupRouter(employeeHandler *EmployeeHandler) *gin.Engine {
 			"http://localhost:8080",
 			"https://tallner.github.io/ya_frontend/",
 			"https://tallner.crabdance.com",
-			"https://xstall.chickenkiller.com"}, // frontend URL
+			"https://xstall.chickenkiller.com",
+			"http://xstall.chickenkiller.com"}, // frontend URL
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE"},
 		AllowHeaders:     []string{"Origin", "Authorization", "Content-Type"},
 		AllowCredentials: true,
