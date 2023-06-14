@@ -1,12 +1,12 @@
 # ya_individual_go_backend -> [Dokumentation av appen](https://github.com/tallner/ya_individual_go_backend/blob/main/Dokumentation.md)
 
 ### Webtjänster
-- [ ] Två stycken; ena är skriven i Go  eller Python
-- [ ] En webbsajt
-- [ ] Databasdrivna (förslag kör MySQL i ert kluster)
-	- [ ] Dessa ska köras i eget Kubernetes-kluster
-	- [ ] set up controller och DNS-subdomains
-	- [ ] manuell deploy med kubectl rollout restart deployment
+- [x] Två stycken; ena är skriven i Go  eller Python
+- [x] En webbsajt
+- [x] Databasdrivna (förslag kör MySQL i ert kluster)
+	- [x] Dessa ska köras i eget Kubernetes-kluster
+	- [x] set up controller och DNS-subdomains
+	- [x] manuell deploy med kubectl rollout restart deployment
 
 ### Inlämning
 - [x] Kod i privata git-repository
@@ -23,8 +23,8 @@
 - [x] push container -> container repository
 
 ### Väl godkänt
-- [ ] Minst ett till CRUD API i andra språket
-  - [ ] Som databas ska du välja nåt annat än det ovan (ex om MySQL ovan, MS SQLServer)
-- [ ] Frontend
+- [x] Minst ett till CRUD API i andra språket....njaaa
+  - [x] Som databas ska du välja nåt annat än det ovan (ex om MySQL ovan, MS SQLServer)...njaa här med 
+- [x] Frontend
 - [ ] Databas backup -> S3 lagring – tex backblaze.com
 https://www.youtube.com/watch?v=VtVaK5BE52k
